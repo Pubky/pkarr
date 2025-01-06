@@ -6,6 +6,9 @@ members = [
 # See: https://github.com/rust-lang/rust/issues/90148#issuecomment-949194352
 resolver = "2"
 
+[workspace.dependencies]
+mainline = { git = "https://github.com/pubky/mainline", branch="v5-rc1", default-features = false }
+
 [workspace.package]
 version = "0.5.0-alpha"
 

@@ -440,7 +440,7 @@ fn actor_thread(
                                 salt: None,
                             },
                         ),
-                        resolvers.clone(),
+                        resolvers.as_deref(),
                     ) {
                         for response in responses {
                             if let Response::Mutable(mutable_item) = response {
