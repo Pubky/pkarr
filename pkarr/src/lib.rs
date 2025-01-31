@@ -31,7 +31,7 @@ pub use signed_packet::SignedPacket;
 
 #[cfg(all(not(target_arch = "wasm32"), feature = "dht"))]
 pub use client::dht::Info;
-#[cfg(any(target_arch = "wasm32", feature = "dht"))]
+#[cfg(any(feature = "relay", feature = "dht"))]
 pub use client::{Client, Config};
 
 // Rexports
@@ -43,7 +43,7 @@ pub mod errors {
     #[cfg(all(not(target_arch = "wasm32"), feature = "dht"))]
     pub use super::client::dht::{ClientWasShutdown, PublishError};
 
-    #[cfg(any(target_arch = "wasm32", feature = "relay"))]
+    #[cfg(feature = "relay")]
     pub use super::client::relay::{EmptyListOfRelays, PublishToRelayError};
 
     pub use super::keys::PublicKeyError;
